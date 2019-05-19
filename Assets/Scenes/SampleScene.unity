@@ -330,10 +330,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68ce1c433639b342868f267cc9f070a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GrabAction:
-    actionPath: 
+  handType: 0
+  grabPinchAction:
+    actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  m_ContactInteractable: []
 --- !u!1001 &165817307
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1072,10 +1072,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a68ce1c433639b342868f267cc9f070a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_GrabAction:
-    actionPath: 
+  handType: 0
+  grabPinchAction:
+    actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
-  m_ContactInteractable: []
 --- !u!1 &610916546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1393305836126458, guid: a5a328fd0bdbc82418c900ec0e290bd4,
@@ -2543,7 +2543,9 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 1.289
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5279450711847480115, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+    - {fileID: 1703242474508844320, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &1768499586
 GameObject:

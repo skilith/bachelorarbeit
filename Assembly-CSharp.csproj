@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
-    <Compile Include="Assets\Scripts\Interactable.cs" />
     <Reference Include="Unity.ProGrids">
       <HintPath>D:/Code/Unity/BA2/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>
@@ -641,6 +640,10 @@
     <ProjectReference Include="SteamVR_Windows_EditorHelper.csproj">
       <Project>{93C6ED5D-52ED-3E27-D408-762A6A4097AD}</Project>
       <Name>SteamVR_Windows_EditorHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="SteamVR_Actions.csproj">
+      <Project>{01E8528C-01EA-66EB-1119-C6BDF281650B}</Project>
+      <Name>SteamVR_Actions</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
