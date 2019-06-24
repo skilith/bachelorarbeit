@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,37 +13,40 @@ public class InputController : MonoBehaviour
     // TODO teste Endnachricht 
     
     public SteamVR_Action_Boolean triggerClick;
+    public GameObject rightHand;
+    
     public Text finishedText;
+
+    public Transform position1;
+    public Transform position2;
+    public Transform position3;
+    public Transform position4;
+    public Transform position5;
+    public Transform position6;
+    public Transform position7;
+    
     
     private const SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any;
     
-    List<Vector3> coordinates = new List<Vector3>();
-    private Vector3 coordinate = new Vector3();
+    private List<Transform> positions = new List<Transform>();
+    private int currentPositionIndex;
 
-    private DateTime start;
-    private DateTime end;
-    private List<double> times = new List<double>();
+    private Collider collider;
+
+    private List<DateTime> times = new List<DateTime>();
+    private List<double> timeDifferences = new List<double>();
+    private DateTime timer;
+    private double difference;
     
 
     private void OnEnable()
-    {
+    {       
+        initVariables();
+        triggerClick.AddOnStateDownListener(RemoveCube, hand);
         
-        finishedText.text = "";
-        // initializes the coordinates
-        initCoordinates();
-        // iterate over coordinates
-        foreach (Vector3 iterCoor in coordinates)
-        {
-            start = DateTime.Now;
-            coordinate = iterCoor;
-            triggerClick.AddOnStateDownListener(RemoveCube, hand);
-        }
-
-        // display message
-        finishedText.text = "Fertig!";
-        writeToFile();
-        
-        // TODO include keyboard input 
+        // TODO text tutorial
+        timer = DateTime.Now;
+        times.Add(timer);        
     }
 
     private void OnDisable()
@@ -57,14 +59,30 @@ public class InputController : MonoBehaviour
         switch (fromSource)
         {
             case SteamVR_Input_Sources.Any:
-                end = DateTime.Now;
-                double timeDifference = (end - start).TotalSeconds;
-                times.Add(timeDifference);
-                Debug.Log(timeDifference + " Seconds");
-                
-                // translate cube
-                transform.position = Vector3.MoveTowards(transform.position, coordinate, 100);
-                Debug.Log("translated cube");
+
+                // TODO left hand?
+                if (collider.bounds.Contains(rightHand.transform.position))
+                {
+                    timer = DateTime.Now;
+                    difference = (timer - times[times.Count - 1]).TotalSeconds;
+                    timeDifferences.Add(difference);
+                    times.Add(timer);
+                    Debug.Log(difference + " Seconds");
+                    
+                    currentPositionIndex++;
+                    
+                    if (currentPositionIndex == positions.Count)
+                    {
+                        gameObject.SetActive(false);
+                        finishedText.text = "Fertig!";
+                        writeToFile();
+                    }
+                    else
+                    {
+                        gameObject.transform.position = positions[currentPositionIndex].position;
+                        Debug.Log("translated cube");
+                    }
+                }                              
                 
                 break;
             case SteamVR_Input_Sources.LeftHand:
@@ -96,15 +114,20 @@ public class InputController : MonoBehaviour
         }
     }
     
-    private void initCoordinates()
+    private void initVariables()
     {
-        coordinates.Add(new Vector3(2.403f, 0.91f, 0.402f));
-        coordinates.Add(new Vector3(0.2676f, 0.942f, 2.9623f));
-        coordinates.Add(new Vector3(2.403f, 1.9333f, 2.419848f));
-        coordinates.Add(new Vector3(0.495f, 1.276f, -1.309f));
-        coordinates.Add(new Vector3(-0.8197f, 0.909f, 1.604f));
-        coordinates.Add(new Vector3(1.6288f, 0.968f, 2.358f));
-        coordinates.Add(new Vector3(2.728818f, 0.0517f, -1.199f));
+        positions.Add(position1);
+        positions.Add(position2);
+        positions.Add(position3);
+        positions.Add(position4);
+        positions.Add(position5);
+        positions.Add(position6);
+        positions.Add(position7);
+        
+        collider = gameObject.GetComponent<BoxCollider>();
+        currentPositionIndex = 0;
+        finishedText.text = "";
+        difference = 0.0;
     }
 
     void writeToFile()
@@ -127,14 +150,12 @@ public class InputController : MonoBehaviour
                         for (int j = 0; j < 7; j++)
                         {
                             file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j+1);
-                            file.WriteLine(times[j]);
+                            file.WriteLine(timeDifferences[j]);
                         }
-                        file.WriteLine("\n Gesamtzeit: {0}", times.Sum());
+                        file.WriteLine("\n Gesamtzeit: {0}", timeDifferences.Sum());
                     }
                 }
             }
-
-            
         }
     }
     

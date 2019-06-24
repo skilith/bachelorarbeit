@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
+    <Compile Include="Assets\Scripts\KeyboardInputController.cs" />
     <Reference Include="Unity.ProGrids">
       <HintPath>D:/Code/Unity/BA2/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>
