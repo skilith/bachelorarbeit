@@ -13,14 +13,14 @@ public class SphereController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sphereCenter = gameObject.transform.position;
-        waveCenter = new Vector3(sphereCenter.x, sphereCenter.y + 1, sphereCenter.z);
     }
 
     // Update is called once per frame
     void Update()
     {
+        float distance = Vector3.Distance(cubeTransform.position, gameObject.transform.position);
         gameObject.transform.position = head.position;
+        gameObject.transform.localScale = new Vector3(distance / 2, distance / 2, distance / 2);
         rotateToCube();
     }
     

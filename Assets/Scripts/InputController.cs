@@ -1,22 +1,25 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Valve.VR;
 
 public class InputController : MonoBehaviour
 {
-    // TODO teste Zeitdifferenz
-    // TODO teste Translation
-    // TODO teste Endnachricht 
-    
     public SteamVR_Action_Boolean triggerClick;
     public GameObject rightHand;
-    
-    public Text finishedText;
 
+    public Text upperText;
+    public Text lowerText;
+    public Text upperCountdownText;
+    public Text lowerCountdownText;
+    public Transform player;
+    
     public Transform position1;
     public Transform position2;
     public Transform position3;
@@ -25,40 +28,53 @@ public class InputController : MonoBehaviour
     public Transform position6;
     public Transform position7;
     
-    
-    private const SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any;
-    
     private List<Transform> positions = new List<Transform>();
-    private int currentPositionIndex;
+    private int currentPositionIndex = 0;
 
+    private const SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any;
     private Collider collider;
 
     private List<DateTime> times = new List<DateTime>();
     private List<double> timeDifferences = new List<double>();
     private DateTime timer;
-    private double difference;
-    
+    private double difference = 0;
+
+    private float countdown = 10;
 
     private void OnEnable()
     {       
         initVariables();
-        Debug.Log(triggerClick);
         triggerClick.AddOnStateDownListener(RemoveCube, hand);
         
-        // TODO text tutorial
         timer = DateTime.Now;
         times.Add(timer);        
     }
 
-    private void OnDisable()
+    private void OnDisable() 
     {
-        Debug.Log(hand);
         triggerClick.RemoveOnStateDownListener(RemoveCube, hand);
+    }
+
+    private void Update()
+    {
+        tutorial();
+    }
+
+    void tutorial()
+    {
+        upperCountdownText.text = "Klicke auf die Würfel";
+        lowerCountdownText.text = "Beginne in " + countdown.ToString("0") + " Sekunden";
+        countdown -= Time.deltaTime;
+        if (countdown < 0)
+       {
+            lowerCountdownText.text = "";
+            upperCountdownText.text = "";
+        }
     }
 
     private void RemoveCube(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        /*switch (fromSource)
+        switch (fromSource)
         {
             case SteamVR_Input_Sources.Any:
 
@@ -69,22 +85,25 @@ public class InputController : MonoBehaviour
                     difference = (timer - times[times.Count - 1]).TotalSeconds;
                     timeDifferences.Add(difference);
                     times.Add(timer);
-                    Debug.Log(difference + " Seconds");
                     
                     currentPositionIndex++;
                     
                     if (currentPositionIndex == positions.Count)
                     {
-                        gameObject.SetActive(false);
-                        finishedText.text = "Fertig!";
-                        writeToFile();
+                        upperText.text = "Fertig!";
+                        lowerText.text = "Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") + " Sekunden gebraucht. ";
+                        //writeToFile();
                     }
                     else
                     {
                         gameObject.transform.position = positions[currentPositionIndex].position;
-                        Debug.Log("translated cube");
+                        lowerText.text = difference.ToString("0.00") + " Sekunden";
                     }
-                }                              
+                }        
+                else 
+                {
+                    upperText.text = "Geh näher an den Würfel!";
+                }                     
                 
                 break;
             case SteamVR_Input_Sources.LeftHand:
@@ -113,8 +132,8 @@ public class InputController : MonoBehaviour
                 break;
             default:
                 throw new ArgumentOutOfRangeException("fromSource", fromSource, null);
-        }*/
-    }
+        }
+    }  
     
     private void initVariables()
     {
@@ -126,12 +145,10 @@ public class InputController : MonoBehaviour
         positions.Add(position6);
         positions.Add(position7);
         
-        collider = gameObject.GetComponent<BoxCollider>();
-        currentPositionIndex = 0;
-        finishedText.text = "";
-        difference = 0.0;
+        upperText.text = "";
+        lowerText.text = "";
     }
-
+    
     void writeToFile()
     {
         if (times.Count == 7)
@@ -147,7 +164,7 @@ public class InputController : MonoBehaviour
                 {
                     path = Path.Combine(dir, filename + "_" + i + fileExt);
                     
-                    using (System.IO.StreamWriter file = new StreamWriter(path))
+                    using (StreamWriter file = new StreamWriter(path))
                     {
                         for (int j = 0; j < 7; j++)
                         {
@@ -160,10 +177,5 @@ public class InputController : MonoBehaviour
             }
         }
     }
-    
-    // Update is called once per frame
-    void Update()
-    {
-   
-    }
 }
+

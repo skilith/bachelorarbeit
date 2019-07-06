@@ -10,7 +10,10 @@ using UnityEngine.UI;
 
 public class KeyboardInputController : MonoBehaviour
 {
-    public Text finishedText;
+    public Text upperText;
+    public Text lowerText;
+    public Text upperCountdownText;
+    public Text lowerCountdownText;
     public Transform player;
     
     public Transform position1;
@@ -22,35 +25,19 @@ public class KeyboardInputController : MonoBehaviour
     public Transform position7;
     
     private List<Transform> positions = new List<Transform>();
-    private int currentPositionIndex;
+    private int currentPositionIndex = 0;
     
-    private Ray ray;
-    private RaycastHit raycastHit;
-
     private List<DateTime> times = new List<DateTime>();
     private List<double> timeDifferences = new List<double>();
     private DateTime timer;
-    private double difference;
-    private String tag = "";
+    private double difference = 0;
     
-    // Update is called once per frame
-    void Update()
-    {       
-//        if (Input.GetMouseButtonDown(0)) 
-//        {
-//            ray = Camera.current.ScreenPointToRay(Input.mousePosition);
-//            if(Physics.Raycast(ray,out raycastHit))
-//            {
-//                Debug.Log(raycastHit.collider.name);
-//            }
-//        }
-    }
+    private float countdown = 10;
 
     void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("mouse down and over");
             RemoveCube();
         }
     }
@@ -59,15 +46,27 @@ public class KeyboardInputController : MonoBehaviour
     {       
         initVariables();
         
-        // TODO text tutorial
-        finishedText.text = "Klicke auf die Würfel";
-        Thread.Sleep(5000);
-        finishedText.text = "LOS!";
-        
         timer = DateTime.Now;
         times.Add(timer);        
     }
-    
+
+    private void Update()
+    {
+        tutorial();
+    }
+
+    void tutorial()
+    {
+        upperCountdownText.text = "Klicke auf die Würfel";
+        lowerCountdownText.text = "Beginne in " + countdown.ToString("0") + " Sekunden";
+        countdown -= Time.deltaTime;
+        if (countdown < 0)
+       {
+            lowerCountdownText.text = "";
+            upperCountdownText.text = "";
+        }
+    }
+
     private void OnDisable()
     {
         
@@ -76,9 +75,7 @@ public class KeyboardInputController : MonoBehaviour
     private void RemoveCube()
     {
         float distance = Vector3.Distance(player.position, gameObject.transform.position);
-        
-        Debug.Log(distance);
-        
+                
         if (distance <= 1.5)
         {
             timer = DateTime.Now;
@@ -91,20 +88,21 @@ public class KeyboardInputController : MonoBehaviour
             if (currentPositionIndex == positions.Count)
             {
                 gameObject.SetActive(false);
-                finishedText.text = "Fertig!";
-                writeToFile();
+                upperText.text = "Fertig!";
+                lowerText.text = "Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") + " Sekunden gebraucht. ";
+                //writeToFile();
             }
             else
             {
                 gameObject.transform.position = positions[currentPositionIndex].position;
-                finishedText.text = difference + " Seconds" 
+                lowerText.text = difference.ToString("0.00") + " Sekunden";
             }
         }      
         else if (distance > 1.5)
         {
-            finishedText.text = "Geh näher an den Würfel!";
+            upperText.text = "Geh näher an den Würfel!";
         }
-    }
+    }  
     
     private void initVariables()
     {
@@ -116,10 +114,8 @@ public class KeyboardInputController : MonoBehaviour
         positions.Add(position6);
         positions.Add(position7);
         
-        collider = gameObject.GetComponent<BoxCollider>();
-        currentPositionIndex = 0;
-        finishedText.text = "";
-        difference = 0.0;
+        upperText.text = "";
+        lowerText.text = "";
     }
     
     void writeToFile()
@@ -150,12 +146,5 @@ public class KeyboardInputController : MonoBehaviour
             }
         }
     }
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
-    
 }
 
