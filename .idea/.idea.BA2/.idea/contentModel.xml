@@ -22,6 +22,11 @@
         <e p="Scripts" t="Include">
           <e p="InputController.cs" t="Include" />
           <e p="KeyboardInputController.cs" t="Include" />
+          <e p="MeshInverter.cs" t="Include" />
+          <e p="SphereController.cs" t="Include" />
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="RippleShader.shader" t="Include" />
         </e>
         <e p="SteamVR" t="Include">
           <e p="Editor" t="Include">
@@ -257,6 +262,7 @@
               </e>
             </e>
           </e>
+          <e p="link.xml" t="Include" />
           <e p="Plugins" t="Include">
             <e p="openvr_api.cs" t="Include" />
           </e>
@@ -278,6 +284,7 @@
             <e p="SteamVR_EnumEqualityComparer.cs" t="Include" />
             <e p="SteamVR_Events.cs" t="Include" />
             <e p="SteamVR_ExternalCamera.cs" t="Include" />
+            <e p="SteamVR_ExternalCamera_LegacyManager.cs" t="Include" />
             <e p="SteamVR_Fade.cs" t="Include" />
             <e p="SteamVR_Frustum.cs" t="Include" />
             <e p="SteamVR_IK.cs" t="Include" />
@@ -293,6 +300,7 @@
             <e p="SteamVR_SphericalProjection.cs" t="Include" />
             <e p="SteamVR_TrackedCamera.cs" t="Include" />
             <e p="SteamVR_TrackedObject.cs" t="Include" />
+            <e p="SteamVR_TrackingReferenceManager.cs" t="Include" />
             <e p="SteamVR_Utils.cs" t="Include" />
           </e>
           <e p="SteamVR.asmdef" t="Include" />

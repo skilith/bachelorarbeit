@@ -60,6 +60,9 @@
     <Compile Include="Assets\AssetStoreOriginals\_SNAPS_PrototypingAssets\About\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\InputController.cs" />
     <Compile Include="Assets\Scripts\KeyboardInputController.cs" />
+    <Compile Include="Assets\Scripts\MeshInverter.cs" />
+    <Compile Include="Assets\Scripts\SphereController.cs" />
+    <None Include="Assets\Shaders\RippleShader.shader" />
     <Reference Include="Unity.ProGrids">
       <HintPath>D:/Code/Unity/BA2/Library/ScriptAssemblies/Unity.ProGrids.dll</HintPath>
     </Reference>

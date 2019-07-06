@@ -42,6 +42,7 @@ public class InputController : MonoBehaviour
     private void OnEnable()
     {       
         initVariables();
+        Debug.Log(triggerClick);
         triggerClick.AddOnStateDownListener(RemoveCube, hand);
         
         // TODO text tutorial
@@ -51,12 +52,13 @@ public class InputController : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log(hand);
         triggerClick.RemoveOnStateDownListener(RemoveCube, hand);
     }
 
     private void RemoveCube(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
-        switch (fromSource)
+        /*switch (fromSource)
         {
             case SteamVR_Input_Sources.Any:
 
@@ -111,7 +113,7 @@ public class InputController : MonoBehaviour
                 break;
             default:
                 throw new ArgumentOutOfRangeException("fromSource", fromSource, null);
-        }
+        }*/
     }
     
     private void initVariables()

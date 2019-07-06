@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class KeyboardInputController : MonoBehaviour
 {
-    public GameObject hoverSphere;
     public Text finishedText;
+    public Transform player;
     
     public Transform position1;
     public Transform position2;
@@ -23,28 +24,45 @@ public class KeyboardInputController : MonoBehaviour
     private List<Transform> positions = new List<Transform>();
     private int currentPositionIndex;
     
-    private Collider collider;
+    private Ray ray;
+    private RaycastHit raycastHit;
 
     private List<DateTime> times = new List<DateTime>();
     private List<double> timeDifferences = new List<double>();
     private DateTime timer;
     private double difference;
+    private String tag = "";
     
+    // Update is called once per frame
+    void Update()
+    {       
+//        if (Input.GetMouseButtonDown(0)) 
+//        {
+//            ray = Camera.current.ScreenPointToRay(Input.mousePosition);
+//            if(Physics.Raycast(ray,out raycastHit))
+//            {
+//                Debug.Log(raycastHit.collider.name);
+//            }
+//        }
+    }
+
+    void OnMouseOver()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log("mouse down and over");
+            RemoveCube();
+        }
+    }
+
     private void OnEnable()
     {       
         initVariables();
-
-        bool mouseDown = Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2);
-
-        if (mouseDown)
-        {
-            Debug.Log("Maus geklickt");
-            RemoveCube();
-        }
         
         // TODO text tutorial
         finishedText.text = "Klicke auf die Würfel";
-        //Thread.Sleep(10000);
+        Thread.Sleep(5000);
+        finishedText.text = "LOS!";
         
         timer = DateTime.Now;
         times.Add(timer);        
@@ -57,14 +75,16 @@ public class KeyboardInputController : MonoBehaviour
 
     private void RemoveCube()
     {
-        if (collider.bounds.Contains(hoverSphere.transform.position))
+        float distance = Vector3.Distance(player.position, gameObject.transform.position);
+        
+        Debug.Log(distance);
+        
+        if (distance <= 1.5)
         {
-            Debug.Log("Würfel geklickt");
             timer = DateTime.Now;
             difference = (timer - times[times.Count - 1]).TotalSeconds;
             timeDifferences.Add(difference);
             times.Add(timer);
-            Debug.Log(difference + " Seconds");
                     
             currentPositionIndex++;
                     
@@ -77,9 +97,13 @@ public class KeyboardInputController : MonoBehaviour
             else
             {
                 gameObject.transform.position = positions[currentPositionIndex].position;
-                Debug.Log("translated cube");
+                finishedText.text = difference + " Seconds" 
             }
-        }         
+        }      
+        else if (distance > 1.5)
+        {
+            finishedText.text = "Geh näher an den Würfel!";
+        }
     }
     
     private void initVariables()
@@ -130,12 +154,8 @@ public class KeyboardInputController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }
+
