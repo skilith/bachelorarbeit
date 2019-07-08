@@ -1,4 +1,6 @@
-﻿Shader "Unlit/RippleShader"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/RippleShader"
 {
     Properties 
     {
@@ -62,6 +64,11 @@
 
 			fixed4 frag (v2f i) : SV_Target
             {
+                v2f o;
+                o.vertex = UnityObjectToClipPos (i.vertex);       
+                o.screenPos = ComputeScreenPos(o.vertex);
+                if(o.screenPos.x < 10 && o.screenPos.y < 10) return (1, 0, 0, 1);
+            
                 float pos = lerp(i.uv.x, i.uv.y, _Direction) * _Tiling + (_Time.y * _Speed);
                 fixed value = floor(frac(pos) + 0.5) ;
                 return lerp(_Color1, _Color2, value);
