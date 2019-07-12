@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -14,10 +15,10 @@ public class InputController : MonoBehaviour
     public SteamVR_Action_Boolean triggerClick;
     public GameObject rightHand;
 
-    public Text upperText;
-    public Text lowerText;
-    public Text upperCountdownText;
-    public Text lowerCountdownText;
+    public TextMeshProUGUI upperText;
+    public TextMeshProUGUI lowerText;
+    public TextMeshProUGUI upperCountdownText;
+    public TextMeshProUGUI lowerCountdownText;
     public Transform player;
     
     public Transform position1;

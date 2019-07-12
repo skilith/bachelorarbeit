@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class KeyboardInputController : MonoBehaviour
 {
-    public Text upperText;
-    public Text lowerText;
-    public Text upperCountdownText;
-    public Text lowerCountdownText;
+    public TextMeshProUGUI upperText;
+    public TextMeshProUGUI lowerText;
+    public TextMeshProUGUI upperCountdownText;
+    public TextMeshProUGUI lowerCountdownText;
     public Transform player;
     
     public Transform position1;
@@ -44,10 +45,7 @@ public class KeyboardInputController : MonoBehaviour
 
     private void OnEnable()
     {       
-        initVariables();
-        
-        timer = DateTime.Now;
-        times.Add(timer);        
+        initVariables();      
     }
 
     private void Update()
@@ -64,6 +62,12 @@ public class KeyboardInputController : MonoBehaviour
        {
             lowerCountdownText.text = "";
             upperCountdownText.text = "";
+
+            if (times.Count == 0)
+            {
+                timer = DateTime.Now;
+                times.Add(timer);
+            }
         }
     }
 
