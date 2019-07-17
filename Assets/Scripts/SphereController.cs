@@ -28,6 +28,7 @@ public class SphereController : MonoBehaviour
     {
         Vector3 relativePos = cubeTransform.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.left);
-        transform.rotation = rotation *= Quaternion.Euler(90, 0, 0);
+        // x = 90 for lines, y = 90, z = 180 for circles
+        transform.rotation = rotation *= Quaternion.Euler(-25, 90, 180);
     }
 }

@@ -14,7 +14,8 @@ public class InputController : MonoBehaviour
 {
     public SteamVR_Action_Boolean triggerClick;
     public GameObject rightHand;
-
+    public GameObject leftHand;
+    
     public TextMeshProUGUI upperText;
     public TextMeshProUGUI lowerText;
     public TextMeshProUGUI upperCountdownText;
@@ -79,8 +80,7 @@ public class InputController : MonoBehaviour
         {
             case SteamVR_Input_Sources.Any:
 
-                // TODO left hand?
-                if (collider.bounds.Contains(rightHand.transform.position))
+                if (collider.bounds.Contains(rightHand.transform.position) || collider.bounds.Contains(leftHand.transform.position))
                 {
                     timer = DateTime.Now;
                     difference = (timer - times[times.Count - 1]).TotalSeconds;
