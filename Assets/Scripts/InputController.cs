@@ -15,13 +15,12 @@ public class InputController : MonoBehaviour
     public SteamVR_Action_Boolean triggerClick;
     public GameObject rightHand;
     public GameObject leftHand;
-    
+
     public TextMeshProUGUI upperText;
     public TextMeshProUGUI lowerText;
     public TextMeshProUGUI upperCountdownText;
     public TextMeshProUGUI lowerCountdownText;
-    public Transform player;
-    
+
     public Transform position1;
     public Transform position2;
     public Transform position3;
@@ -29,7 +28,12 @@ public class InputController : MonoBehaviour
     public Transform position5;
     public Transform position6;
     public Transform position7;
-    
+    public Transform position8;
+    public Transform position9;
+    public Transform position10;
+    public Transform position11;
+    public Transform position12;
+
     private List<Transform> positions = new List<Transform>();
     private int currentPositionIndex = 0;
 
@@ -41,18 +45,15 @@ public class InputController : MonoBehaviour
     private DateTime timer;
     private double difference = 0;
 
-    private float countdown = 10;
+    private float countdown = 3;
 
     private void OnEnable()
-    {       
+    {
         initVariables();
         triggerClick.AddOnStateDownListener(RemoveCube, hand);
-        
-        timer = DateTime.Now;
-        times.Add(timer);        
     }
 
-    private void OnDisable() 
+    private void OnDisable()
     {
         triggerClick.RemoveOnStateDownListener(RemoveCube, hand);
     }
@@ -60,6 +61,8 @@ public class InputController : MonoBehaviour
     private void Update()
     {
         tutorial();
+        //bool buttonPressed = SteamVR_Actions._default.GrabGrip.GetStateDown(SteamVR_Input_Sources.Any);
+        //if (buttonPressed && countdown <= 0) RemoveCube();
     }
 
     void tutorial()
@@ -68,31 +71,73 @@ public class InputController : MonoBehaviour
         lowerCountdownText.text = "Beginne in " + countdown.ToString("0") + " Sekunden";
         countdown -= Time.deltaTime;
         if (countdown < 0)
-       {
+        {
             lowerCountdownText.text = "";
             upperCountdownText.text = "";
+            
+            if (times.Count == 0)
+            {
+                timer = DateTime.Now;
+                times.Add(timer);
+            }
         }
     }
+
+    /*private void RemoveCube()
+    {
+        if (collider.bounds.Contains(rightHand.transform.position) ||
+            collider.bounds.Contains(leftHand.transform.position))
+        {
+            timer = DateTime.Now;
+            difference = (timer - times[times.Count - 1]).TotalSeconds;
+            timeDifferences.Add(difference);
+            times.Add(timer);
+
+            currentPositionIndex++;
+
+            if (currentPositionIndex == positions.Count)
+            {
+                gameObject.SetActive(false);
+                upperText.text = "Fertig!";
+                lowerText.text = "Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") +
+                                 " Sekunden gebraucht. ";
+                
+                //writeToFile();
+            }
+            else
+            {
+                gameObject.transform.position = positions[currentPositionIndex].position;
+                lowerText.text = difference.ToString("0.00") + " Sekunden";
+            }
+        }
+        else
+        {
+            upperText.text = "Geh näher an den Würfel!";
+        }
+    }*/
 
     private void RemoveCube(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
     {
         switch (fromSource)
         {
             case SteamVR_Input_Sources.Any:
-
-                if (collider.bounds.Contains(rightHand.transform.position) || collider.bounds.Contains(leftHand.transform.position))
+                float distance = Vector3.Distance(rightHand.transform.position, gameObject.transform.position);
+                
+                if (distance <= 0.2)
                 {
                     timer = DateTime.Now;
                     difference = (timer - times[times.Count - 1]).TotalSeconds;
                     timeDifferences.Add(difference);
                     times.Add(timer);
-                    
+
                     currentPositionIndex++;
-                    
+
                     if (currentPositionIndex == positions.Count)
                     {
+                        gameObject.SetActive(false);
                         upperText.text = "Fertig!";
-                        lowerText.text = "Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") + " Sekunden gebraucht. ";
+                        lowerText.text = "Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") +
+                                         " Sekunden gebraucht. ";
                         //writeToFile();
                     }
                     else
@@ -100,12 +145,12 @@ public class InputController : MonoBehaviour
                         gameObject.transform.position = positions[currentPositionIndex].position;
                         lowerText.text = difference.ToString("0.00") + " Sekunden";
                     }
-                }        
-                else 
+                }
+                else
                 {
                     upperText.text = "Geh näher an den Würfel!";
-                }                     
-                
+                }
+
                 break;
             case SteamVR_Input_Sources.LeftHand:
                 break;
@@ -134,8 +179,8 @@ public class InputController : MonoBehaviour
             default:
                 throw new ArgumentOutOfRangeException("fromSource", fromSource, null);
         }
-    }  
-    
+    }
+
     private void initVariables()
     {
         positions.Add(position1);
@@ -145,33 +190,40 @@ public class InputController : MonoBehaviour
         positions.Add(position5);
         positions.Add(position6);
         positions.Add(position7);
-        
+        positions.Add(position8);
+        positions.Add(position9);
+        positions.Add(position10);
+        positions.Add(position11);
+        positions.Add(position12);
+
+
         upperText.text = "";
         lowerText.text = "";
     }
-    
+
     void writeToFile()
     {
-        if (times.Count == 7)
+        if (times.Count == positions.Count)
         {
             string path = @"C:\Users\Anita\Documents\BA_Prog_Logs\UserLog.txt";
             string dir = Path.GetDirectoryName(path);
             string filename = Path.GetFileNameWithoutExtension(path);
             string fileExt = Path.GetExtension(path);
 
-            for (int i = 1; ; i++)
+            for (int i = 1;; i++)
             {
                 if (File.Exists(path))
                 {
                     path = Path.Combine(dir, filename + "_" + i + fileExt);
-                    
+
                     using (StreamWriter file = new StreamWriter(path))
                     {
-                        for (int j = 0; j < 7; j++)
+                        for (int j = 0; j < positions.Count; j++)
                         {
-                            file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j+1);
+                            file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j + 1);
                             file.WriteLine(timeDifferences[j]);
                         }
+
                         file.WriteLine("\n Gesamtzeit: {0}", timeDifferences.Sum());
                     }
                 }
@@ -179,4 +231,3 @@ public class InputController : MonoBehaviour
         }
     }
 }
-

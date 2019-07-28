@@ -29,7 +29,7 @@ Material:
     - _CutoutThresh: 0.2
     - _Direction: 1
     - _Distance: 1
-    - _Speed: 2.5
+    - _Speed: 3
     - _Tiling: 182
     - _Transparency: 0.108
     m_Colors:

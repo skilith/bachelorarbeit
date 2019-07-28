@@ -9,7 +9,7 @@ Shader "Unlit/RippleShader"
     Properties 
     {
         _Color1 ("Color 1", Color) = (1,1,1,0.1)
-        _Color2 ("Color 2", Color) = (1,1,1,0.5)
+        _Color2 ("Color 2", Color) = (1,1,1,0.1)
         _Tiling ("Tiling", Range(1, 500)) = 128
         _Direction ("Direction", Range(0, 1)) = 0
         _Speed ("Speed", Float) = 1
@@ -70,8 +70,10 @@ Shader "Unlit/RippleShader"
 
                 i.screenPos.xy /= i.screenPos.w;
                     
-                if(i.screenPos.x < 0.66 && i.screenPos.x > 0.33 && i.screenPos.y < 0.95  && i.screenPos.y > 0.65) { 
-                    return lerp(_Color1, _Color2, value);
+                if(i.screenPos.x < 0.66 && i.screenPos.x > 0.33 && i.screenPos.y < 0.8  && i.screenPos.y > 0.5) { 
+                    float4 finalColor = lerp(_Color1, _Color2, value);
+                    finalColor.a *= 0.4;
+                    return finalColor;
                 }
                 
                 return transColor;
