@@ -16,10 +16,12 @@ public class InputController : MonoBehaviour
     public GameObject rightHand;
     public GameObject leftHand;
 
-    public TextMeshProUGUI upperText;
-    public TextMeshProUGUI lowerText;
-    public TextMeshProUGUI upperCountdownText;
-    public TextMeshProUGUI lowerCountdownText;
+    public GameObject visualization;
+    
+    //public Text upperText;
+    public Text lowerText;
+    public Text upperCountdownText;
+    public Text lowerCountdownText;
 
     public Transform position1;
     public Transform position2;
@@ -40,15 +42,20 @@ public class InputController : MonoBehaviour
     private const SteamVR_Input_Sources hand = SteamVR_Input_Sources.Any;
     private Collider collider;
 
+    private MeshRenderer vizMeshRenderer;
+    private MeshRenderer cubeMeshRenderer;
+    
     private List<DateTime> times = new List<DateTime>();
     private List<double> timeDifferences = new List<double>();
     private DateTime timer;
     private double difference = 0;
 
-    private float countdown = 3;
+    private float countdown = 10;
 
     private void OnEnable()
     {
+        //swave.SetActive(true);
+        //attentionFunnel.SetActive(true);
         initVariables();
         triggerClick.AddOnStateDownListener(RemoveCube, hand);
     }
@@ -68,12 +75,20 @@ public class InputController : MonoBehaviour
     void tutorial()
     {
         upperCountdownText.text = "Klicke auf die Würfel";
-        lowerCountdownText.text = "Beginne in " + countdown.ToString("0") + " Sekunden";
+        //lowerCountdownText.text = "Beginne in " + countdown.ToString("0") + " Sekunden";
+        lowerCountdownText.text = countdown.ToString("0");
         countdown -= Time.deltaTime;
         if (countdown < 0)
         {
             lowerCountdownText.text = "";
             upperCountdownText.text = "";
+            
+            if (!visualization.active)
+            {
+                cubeMeshRenderer.enabled = true;
+                vizMeshRenderer.enabled = true;
+                visualization.SetActive(true);
+            }
             
             if (times.Count == 0)
             {
@@ -135,20 +150,22 @@ public class InputController : MonoBehaviour
                     if (currentPositionIndex == positions.Count)
                     {
                         gameObject.SetActive(false);
-                        upperText.text = "Fertig!";
-                        lowerText.text = "Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") +
+                        //upperText.text = "Fertig!";
+                        lowerText.text += "\n Du hast insgesamt " + timeDifferences.Sum().ToString("0.0") +
                                          " Sekunden gebraucht. ";
                         //writeToFile();
+                        visualization.SetActive(false);
+                        gameObject.SetActive(false);
                     }
                     else
                     {
                         gameObject.transform.position = positions[currentPositionIndex].position;
-                        lowerText.text = difference.ToString("0.00") + " Sekunden";
+                        lowerText.text += "\n" + (currentPositionIndex) + ". " + difference.ToString("0.00") + " Sekunden";
                     }
                 }
                 else
                 {
-                    upperText.text = "Geh näher an den Würfel!";
+                    //upperText.text = "Geh näher an den Würfel!";
                 }
 
                 break;
@@ -196,9 +213,11 @@ public class InputController : MonoBehaviour
         positions.Add(position11);
         positions.Add(position12);
 
-
-        upperText.text = "";
+        //upperText.text = "";
         lowerText.text = "";
+        
+        vizMeshRenderer = visualization.GetComponent<MeshRenderer>();
+        cubeMeshRenderer = gameObject.GetComponent<MeshRenderer>();
     }
 
     void writeToFile()

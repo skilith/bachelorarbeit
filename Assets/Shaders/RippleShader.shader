@@ -17,9 +17,11 @@ Shader "Unlit/RippleShader"
     
 	SubShader
 	{
-		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+	    // "Queue"="Transparent"
+		Tags { "Queue"="Overlay+1" "RenderType"="Transparent" }
 
-        ZWrite Off
+        //ZWrite Off
+        ZTest Always
         Blend SrcAlpha OneMinusSrcAlpha
 
 		Pass

@@ -5,20 +5,15 @@ using UnityEngine;
 public class SphereController : MonoBehaviour
 {
     public Transform head;
-    public Transform cubeTransform;
+    public Transform targetTransform;
 
     private Vector3 waveCenter;
     private Vector3 sphereCenter;
     
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(cubeTransform.position, gameObject.transform.position);
+        float distance = Vector3.Distance(targetTransform.position, gameObject.transform.position);
         gameObject.transform.position = head.position;
         gameObject.transform.localScale = new Vector3(distance / 2, distance / 2, distance / 2);
         rotateToCube();
@@ -26,7 +21,7 @@ public class SphereController : MonoBehaviour
     
     void rotateToCube()
     {
-        Vector3 relativePos = cubeTransform.position - transform.position;
+        Vector3 relativePos = targetTransform.position - transform.position;
         Quaternion rotation = Quaternion.LookRotation(relativePos, Vector3.left);
         // x = 90 for lines, y = 90, z = 180 for circles
         transform.rotation = rotation *= Quaternion.Euler(-25, 90, 180);

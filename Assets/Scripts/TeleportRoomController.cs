@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Valve.VR;
 using Random = UnityEngine.Random;
 
@@ -11,8 +13,6 @@ public class TeleportRoomController : MonoBehaviour
     public GameObject startTrigger;
     public SteamVR_Action_Boolean triggerClick;
     public GameObject rightHand;
-    public GameObject player;
-    public Transform playerTarget;
     
     private bool start = false;
     private float x;
@@ -31,8 +31,11 @@ public class TeleportRoomController : MonoBehaviour
     {
         if (start)
         {
-            player.transform.position = playerTarget.position;
-            player.transform.rotation = playerTarget.rotation;
+            //cube.SetActive(false);
+            //player.transform.position = mainPlayerPosition.position;
+            //player.transform.rotation = mainPlayerPosition.rotation;
+            //target.SetActive(true);
+            SceneManager.LoadScene("Main Room");
         }
     }
 
@@ -51,8 +54,8 @@ public class TeleportRoomController : MonoBehaviour
         switch (fromSource)
         {
             case SteamVR_Input_Sources.Any:
-                float cubeDistance = Vector3.Distance(rightHand.transform.position, cube.transform.position);
-                float buttonDistance = Vector3.Distance(rightHand.transform.position, startTrigger.transform.position);
+                float cubeDistance = UnityEngine.Vector3.Distance(rightHand.transform.position, cube.transform.position);
+                float buttonDistance = UnityEngine.Vector3.Distance(rightHand.transform.position, startTrigger.transform.position);
                 
                 if (cubeDistance <= 0.2)
                 {
@@ -94,11 +97,11 @@ public class TeleportRoomController : MonoBehaviour
         }
     }
 
-    private Vector3 randomPosition()
+    private UnityEngine.Vector3 randomPosition()
     {
         x = Random.Range(-5, 1.25f);
         y = Random.Range(0.05f, 2f);
         z = Random.Range(28, 37.19f);
-        return new Vector3(x, y, z);
+        return new UnityEngine.Vector3(x, y, z);
     }
 }
