@@ -19,9 +19,9 @@ public class RandomPosition : MonoBehaviour
     
     private Vector3 randomPosition()
     {
-        x = Random.Range(-5, 1.25f);
-        y = Random.Range(0.05f, 2f);
-        z = Random.Range(28, 37.19f);
+        x = Random.Range(-4.7f, 3.92f);
+        y = Random.Range(0.33f, 2f);
+        z = Random.Range(-4.5f, 2.5f);
         return new Vector3(x, y, z);
     }
     

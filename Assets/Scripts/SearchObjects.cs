@@ -16,10 +16,15 @@ public class SearchObjects : MonoBehaviour
     public Text instructionText;
     public Text countdownText;
     public Transform player;
+
+    public Material outline;
+    public Material decoration;
     
     private MeshRenderer vizMeshRenderer;
     //private MeshRenderer cubeMeshRenderer;
-    
+
+    // todo new
+    private GameObject[] siblings;
     private int currentTransformIndex = 0;
     private Vector3 currentTransformPosition;
     private BoxCollider currentTransformCollider;
@@ -64,6 +69,8 @@ public class SearchObjects : MonoBehaviour
                 //cubeMeshRenderer.enabled = true;
                 vizMeshRenderer.enabled = true;
                 visualization.SetActive(true);
+                // todo new
+                transforms[currentTransformIndex].GetComponent<MeshRenderer>().material = outline;
             }
             
             countdownText.text = "";
@@ -106,7 +113,6 @@ public class SearchObjects : MonoBehaviour
             {
                 currentTransformPosition = transforms[currentTransformIndex].position;
                 currentTransformCollider = transforms[currentTransformIndex].GetComponent<BoxCollider>();
-                // todo new
                 Destroy(transforms[currentTransformIndex-1].GetComponent<Interactable>());
                 
                 gameObject.transform.position = currentTransformPosition;
@@ -131,7 +137,16 @@ public class SearchObjects : MonoBehaviour
         mainCollider.size = currentTransformCollider.size;
         mainCollider.center = currentTransformCollider.center;
         
-        Debug.Log("init collider: " + currentTransformCollider);
+        // todo new
+        siblings = new GameObject[transform.parent.childCount];
+        int i = 0;
+        foreach (Transform child in transform.parent)
+        {
+            siblings[i] = child.gameObject;
+            i += 1;
+        }
+        // remove self
+        siblings = siblings.Skip(1).ToArray();
     }
 
     void writeToFile()
