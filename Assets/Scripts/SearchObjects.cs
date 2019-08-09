@@ -24,7 +24,7 @@ public class SearchObjects : MonoBehaviour
     //private MeshRenderer cubeMeshRenderer;
 
     // todo new
-    private GameObject[] siblings;
+    private List<GameObject> siblings;
     private int currentTransformIndex = 0;
     private Vector3 currentTransformPosition;
     private BoxCollider currentTransformCollider;
@@ -138,15 +138,15 @@ public class SearchObjects : MonoBehaviour
         mainCollider.center = currentTransformCollider.center;
         
         // todo new
-        siblings = new GameObject[transform.parent.childCount];
+        siblings = new List<GameObject>();
         int i = 0;
         foreach (Transform child in transform.parent)
         {
             siblings[i] = child.gameObject;
-            i += 1;
+            i++;
         }
         // remove self
-        siblings = siblings.Skip(1).ToArray();
+        siblings.RemoveAt(0);
     }
 
     void writeToFile()
