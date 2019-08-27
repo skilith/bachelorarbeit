@@ -11,38 +11,35 @@ public class SearchObjects : MonoBehaviour
 {
     public List<Transform> transforms;
     public GameObject visualization;
-    
+       
     public Text timesText;
     public Text instructionText;
     public Text countdownText;
     public Transform player;
 
-    public Material outline;
-    public Material decoration;
-    
     private MeshRenderer vizMeshRenderer;
-    //private MeshRenderer cubeMeshRenderer;
 
-    // todo new
     private List<GameObject> siblings;
+    private List<GameObject> copies;
     private int currentTransformIndex = 0;
     private Vector3 currentTransformPosition;
     private BoxCollider currentTransformCollider;
     private BoxCollider mainCollider;
-    
+
     private List<DateTime> times = new List<DateTime>();
     private List<double> timeDifferences = new List<double>();
     private DateTime timer;
     private double difference = 0;
 
     private float countdown = 3;
-
+    private bool countdownComplete = false;
+    private bool rectVis;
+    
     void OnMouseOver()
     {
-        Debug.Log("mouse over!");
+        //Debug.Log("mouse over!");
         if (Input.GetMouseButtonDown(0) && countdown <= 0)
         {
-           
             searchObjects();
         }
     }
@@ -54,23 +51,27 @@ public class SearchObjects : MonoBehaviour
 
     private void Update()
     {
-        tutorial();
+        if(!countdownComplete) Countdown();      
     }
 
-    void tutorial()
+    void Countdown()
     {
         instructionText.text = "Klicke auf die Würfel";
         countdownText.text = countdown.ToString("0");
         countdown -= Time.deltaTime;
         if (countdown < 0)
-        {
+        {         
             if (!visualization.active)
             {
                 //cubeMeshRenderer.enabled = true;
                 vizMeshRenderer.enabled = true;
-                visualization.SetActive(true);
-                // todo new
-                transforms[currentTransformIndex].GetComponent<MeshRenderer>().material = outline;
+                visualization.SetActive(true);      
+                
+                if (rectVis)
+                {
+                    siblings[0].SetActive(false);
+                    copies[0].SetActive(true);
+                }
             }
             
             countdownText.text = "";
@@ -81,16 +82,17 @@ public class SearchObjects : MonoBehaviour
                 timer = DateTime.Now;
                 times.Add(timer);
             }
+            countdownComplete = true;
         }
     }
 
     private void searchObjects()
     {
         float distance = Vector3.Distance(player.position, gameObject.GetComponent<BoxCollider>().center);
-        float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size) / 1.5f;
+        float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size);
 
         // 1.5
-        if (distance <= minDistance)
+        if (true)
         {
             timer = DateTime.Now;
             difference = (timer - times[times.Count - 1]).TotalSeconds;
@@ -102,7 +104,16 @@ public class SearchObjects : MonoBehaviour
             if (currentTransformIndex == transforms.Count)
             {
                 gameObject.SetActive(false);
-                Destroy(transforms[currentTransformIndex-1].GetComponent<Interactable>());
+                Destroy(transforms[currentTransformIndex - 1].GetComponent<Interactable>());
+                
+                if (rectVis)
+                {
+                    Destroy(copies[currentTransformIndex - 1].GetComponent<Interactable>());
+                    
+                    siblings[currentTransformIndex - 1].SetActive(true);
+                    copies[currentTransformIndex - 1].SetActive(false);
+                }
+                
                 timesText.text += "Du hast insgesamt " + Sum(timeDifferences).ToString("0.0") + " Sekunden gebraucht. ";
                 // TODO
                 //writeToFile();
@@ -113,19 +124,34 @@ public class SearchObjects : MonoBehaviour
             {
                 currentTransformPosition = transforms[currentTransformIndex].position;
                 currentTransformCollider = transforms[currentTransformIndex].GetComponent<BoxCollider>();
-                Destroy(transforms[currentTransformIndex-1].GetComponent<Interactable>());
+                Destroy(transforms[currentTransformIndex - 1].GetComponent<Interactable>());
+
+                // todo neu
+                if (rectVis)
+                {
+                    Destroy(copies[currentTransformIndex - 1].GetComponent<Interactable>());
+                    
+                    siblings[currentTransformIndex - 1].SetActive(true);
+                    copies[currentTransformIndex - 1].SetActive(false);
+                    
+                    siblings[currentTransformIndex].SetActive(false);
+                    copies[currentTransformIndex].SetActive(true);
+                }
                 
                 gameObject.transform.position = currentTransformPosition;
                 mainCollider.size = currentTransformCollider.size;
                 mainCollider.center = currentTransformCollider.center;
-                
+
                 timesText.text += (currentTransformIndex) + ". " + difference.ToString("0.00") + " Sekunden \n";
             }
-        } else Debug.Log("geh näher ran! Abstand: " + distance);
+        }
+        else Debug.Log("geh näher ran! Abstand: " + distance);
     }
 
     private void initVariables()
     {
+        rectVis = visualization.name.Equals("RectVis");
+        Debug.Log(rectVis);
         timesText.text = "";
         vizMeshRenderer = visualization.GetComponent<MeshRenderer>();
         //cubeMeshRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -136,17 +162,25 @@ public class SearchObjects : MonoBehaviour
         gameObject.transform.position = currentTransformPosition;
         mainCollider.size = currentTransformCollider.size;
         mainCollider.center = currentTransformCollider.center;
-        
+
         // todo new
         siblings = new List<GameObject>();
-        int i = 0;
-        foreach (Transform child in transform.parent)
+        for (int i = 2; i < transform.parent.childCount; i++)
         {
-            siblings[i] = child.gameObject;
-            i++;
+            siblings.Add(transform.parent.GetChild(i).gameObject);
         }
-        // remove self
-        siblings.RemoveAt(0);
+        
+        // todo new
+        copies = new List<GameObject>();
+        if (rectVis)
+        {
+            Transform temp = transform.parent.Find("ObjCopies");
+            for (int i = 0; i < temp.childCount; i++)
+            {
+                copies.Add(temp.GetChild(i).gameObject);
+            }
+        }
+        
     }
 
     void writeToFile()
@@ -190,7 +224,7 @@ public class SearchObjects : MonoBehaviour
 
         return result;
     }
-    
+
     float maxValue(Vector3 vector)
     {
         return Mathf.Max(Mathf.Max(vector.x, vector.y), vector.z);

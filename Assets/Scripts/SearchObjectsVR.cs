@@ -20,11 +20,12 @@ public class SearchObjectsVR : MonoBehaviour
 
     public GameObject visualization;
     
-    //public Text upperText;
     public Text timesText;
     public Text instructionText;
     public Text countdownText;
 
+    private List<GameObject> siblings;
+    private List<GameObject> copies;
     private int currentTransformIndex = 0;
     private Vector3 currentTransformPosition;
     private BoxCollider currentTransformCollider;
@@ -42,6 +43,8 @@ public class SearchObjectsVR : MonoBehaviour
     private double difference = 0;
 
     private float countdown = 3;
+    private bool countdownComplete = false;
+    private bool rectVis;
 
     private void OnEnable()
     {
@@ -56,30 +59,38 @@ public class SearchObjectsVR : MonoBehaviour
 
     private void Update()
     {
-        tutorial();
+        if(!countdownComplete) Countdown();      
     }
 
-    void tutorial()
+    void Countdown()
     {
         instructionText.text = "Klicke auf die Würfel";
         countdownText.text = countdown.ToString("0");
         countdown -= Time.deltaTime;
         if (countdown < 0)
-        {
-            countdownText.text = "";
-            instructionText.text = "";
-            
+        {         
             if (!visualization.active)
             {
+                //cubeMeshRenderer.enabled = true;
                 vizMeshRenderer.enabled = true;
-                visualization.SetActive(true);
+                visualization.SetActive(true);      
+                
+                if (rectVis)
+                {
+                    siblings[0].SetActive(false);
+                    copies[0].SetActive(true);
+                }
             }
             
+            countdownText.text = "";
+            instructionText.text = "";
+
             if (times.Count == 0)
             {
                 timer = DateTime.Now;
                 times.Add(timer);
             }
+            countdownComplete = true;
         }
     }
 
@@ -104,6 +115,16 @@ public class SearchObjectsVR : MonoBehaviour
                     if (currentTransformIndex == transforms.Count)
                     {
                         gameObject.SetActive(false);
+                        Destroy(transforms[currentTransformIndex - 1].GetComponent<Interactable>());
+                
+                        if (rectVis)
+                        {
+                            Destroy(copies[currentTransformIndex - 1].GetComponent<Interactable>());
+                    
+                            siblings[currentTransformIndex - 1].SetActive(true);
+                            copies[currentTransformIndex - 1].SetActive(false);
+                        }
+                        
                         timesText.text += "\n Du hast insgesamt " + Sum(timeDifferences).ToString("0.0") +
                                          " Sekunden gebraucht. ";
                         // TODO
@@ -115,14 +136,25 @@ public class SearchObjectsVR : MonoBehaviour
                     {
                         currentTransformPosition = transforms[currentTransformIndex].position;
                         currentTransformCollider = transforms[currentTransformIndex].GetComponent<BoxCollider>();
-                        // todo new
-                        Destroy(transforms[currentTransformIndex-1].GetComponent<Interactable>());
-                        
+                        Destroy(transforms[currentTransformIndex - 1].GetComponent<Interactable>());
+
+                        // todo neu
+                        if (rectVis)
+                        {
+                            Destroy(copies[currentTransformIndex - 1].GetComponent<Interactable>());
+                    
+                            siblings[currentTransformIndex - 1].SetActive(true);
+                            copies[currentTransformIndex - 1].SetActive(false);
+                    
+                            siblings[currentTransformIndex].SetActive(false);
+                            copies[currentTransformIndex].SetActive(true);
+                        }
+                
                         gameObject.transform.position = currentTransformPosition;
                         mainCollider.size = currentTransformCollider.size;
                         mainCollider.center = currentTransformCollider.center;
-                        
-                        timesText.text += "\n" + (currentTransformIndex) + ". " + difference.ToString("0.00") + " Sekunden";
+
+                        timesText.text += (currentTransformIndex) + ". " + difference.ToString("0.00") + " Sekunden \n";
                     }
                 }
 
@@ -158,12 +190,36 @@ public class SearchObjectsVR : MonoBehaviour
 
     private void initVariables()
     {
+        rectVis = visualization.name.Equals("RectVis");
+        Debug.Log(rectVis);
         timesText.text = "";
         vizMeshRenderer = visualization.GetComponent<MeshRenderer>();
         //cubeMeshRenderer = gameObject.GetComponent<MeshRenderer>();
         currentTransformPosition = transforms[currentTransformIndex].position;
         currentTransformCollider = transforms[currentTransformIndex].GetComponent<BoxCollider>();
         mainCollider = gameObject.GetComponent<BoxCollider>();
+
+        gameObject.transform.position = currentTransformPosition;
+        mainCollider.size = currentTransformCollider.size;
+        mainCollider.center = currentTransformCollider.center;
+
+        // todo new
+        siblings = new List<GameObject>();
+        for (int i = 2; i < transform.parent.childCount; i++)
+        {
+            siblings.Add(transform.parent.GetChild(i).gameObject);
+        }
+        
+        // todo new
+        copies = new List<GameObject>();
+        if (rectVis)
+        {
+            Transform temp = transform.parent.Find("ObjCopies");
+            for (int i = 0; i < temp.childCount; i++)
+            {
+                copies.Add(temp.GetChild(i).gameObject);
+            }
+        }
     }
 
     void writeToFile()

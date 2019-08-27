@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.UI;
 using Valve.VR;
 
@@ -10,7 +11,6 @@ public class GuiController : MonoBehaviour
     public Camera vrCamera;
     public Transform target;
     public Transform playerHead;
-    public Image image;
     
     private Color borderColor;
     private Color standardColor = Color.cyan;
@@ -28,7 +28,6 @@ public class GuiController : MonoBehaviour
     private Rect rightLine;
     private Rect targetRect;
     private float borderWidth = 10;
-    private Rect fullsize;
 
     private Vector3 startLookAt;
     private Vector3 currentLookAt;
@@ -47,10 +46,7 @@ public class GuiController : MonoBehaviour
 
     private void Start()
     {
-        texture = new Texture2D(Screen.width, Screen.height);
-        clearColor(texture, Color.clear);
-        fullsize = new Rect(0,0, Screen.width, Screen.height);
-        
+        startLookAt = playerHead.forward;
         CalcRectSize();
     }
 
@@ -65,19 +61,12 @@ public class GuiController : MonoBehaviour
 
         if (targetVisible()) borderColor = targetVisibleColor;
         else borderColor = standardColor;
-
-        Sprite sprite = Sprite.Create(texture, fullsize, new Vector2(0.5f, 0.5f));
-        image.GetComponent<Image>().overrideSprite = sprite;
-
-        //clearColor(texture, Color.clear);
-        //DrawOutlineTex(rectPos);
-        //DrawRectTex(targetRect, targetColor);
     }
 
     private void OnGUI()
     {
-        //DrawOutline(rectPos);
-        //DrawRectangle(targetRect, targetColor);
+        DrawOutline(rectPos);
+        DrawRectangle(targetRect, targetColor);
     }
 
     void DrawOutline(Vector2 center)
@@ -106,43 +95,8 @@ public class GuiController : MonoBehaviour
         GUI.Box(position, GUIContent.none);
     }
 
-    void DrawRectTex(Rect position, Color color)
-    {
-        // todo round ok?
-        int xMin = Mathf.RoundToInt(position.x);
-        int xMax = Mathf.RoundToInt(position.x + position.width);
-        int yMin = Mathf.RoundToInt(position.y);
-        int yMax = Mathf.RoundToInt(position.y + position.height);
-
-        for (int x = xMin; x < xMax; x++)
-        {
-            for (int y = yMin; y < yMax; y++)
-            {
-                texture.SetPixel(x, y, color);
-            }
-        }
-        texture.Apply();
-    }
-
-    void DrawOutlineTex(Vector2 center)
-    {
-        rectX = center.x - (rectW / 2);
-        rectY = center.y - (rectH / 2);
-        
-        topLine = new Rect(rectX, rectY, rectW, borderWidth);
-        botLine = new Rect(rectX + borderWidth, rectY + rectH, rectW, borderWidth);
-        leftLine = new Rect(rectX, rectY + borderWidth, borderWidth, rectH);
-        rightLine = new Rect(rectX + rectW, rectY, borderWidth, rectH);
-        
-        DrawRectTex(topLine, borderColor);
-        DrawRectTex(botLine, borderColor);
-        DrawRectTex(leftLine, borderColor);
-        DrawRectTex(rightLine, borderColor);
-    }
-    
     void CalcRectSize()
     {
-        startLookAt = playerHead.forward;
         rectPos = center;
                 
         // calculate height and width of box
@@ -156,9 +110,7 @@ public class GuiController : MonoBehaviour
     }
 
     Vector2 RotToScreen(Vector3 reference, Vector3 target)
-    {
-        // calculate box position relative to start
-        currentLookAt = playerHead.forward;        
+    {   
         
         // rotation between start and current view
         Quaternion rotation = Quaternion.FromToRotation(reference, target);
