@@ -18,10 +18,12 @@ Properties {
 
 Category {
 	Tags { "Queue"="Transparent" "IgnoreProjector"="True" "RenderType"="Transparent" "PreviewType"="Plane" "CanUseSpriteAtlas"="True" }
-	ZTest Always
 	Blend SrcAlpha One
 	ColorMask RGB
-	Cull Off Lighting Off ZWrite Off
+	Cull Off 
+	Lighting Off 
+	ZTest Always
+	//ZWrite Off
 	
 	SubShader {
 

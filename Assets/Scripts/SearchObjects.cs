@@ -92,7 +92,7 @@ public class SearchObjects : MonoBehaviour
         float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size);
 
         // 1.5
-        if (true)
+        if (distance <= 10)
         {
             timer = DateTime.Now;
             difference = (timer - times[times.Count - 1]).TotalSeconds;
@@ -151,7 +151,6 @@ public class SearchObjects : MonoBehaviour
     private void initVariables()
     {
         rectVis = visualization.name.Equals("RectVis");
-        Debug.Log(rectVis);
         timesText.text = "";
         vizMeshRenderer = visualization.GetComponent<MeshRenderer>();
         //cubeMeshRenderer = gameObject.GetComponent<MeshRenderer>();

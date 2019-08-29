@@ -5,12 +5,16 @@ using UnityEngine.UI.Extensions;
 
 public class CircleController : MonoBehaviour
 {
+    public float screenOffset = 200;
+    
     public Transform target;
     public Transform playerHead;
     public RectTransform other;
     
+    private float screenWidth;
+    private float screenHeight;
+    
     private Color standardCol;
-    private Color transparent = Color.clear;
     
     private float rectH;
     private float rectW;
@@ -24,9 +28,15 @@ public class CircleController : MonoBehaviour
 
     private float offsetX;
     private float offsetY;
+    
     private void Start()
     {
-        startLookAt = playerHead.forward;
+        screenWidth = Screen.width - screenOffset;
+        screenHeight = Screen.height - screenOffset;
+        
+        //startLookAt = playerHead.forward;
+        startLookAt = new Vector3(0, 0, 1);
+        
         standardCol = GetComponent<UICircle>().color;
     }
 
@@ -35,8 +45,21 @@ public class CircleController : MonoBehaviour
         targetLookAt = target.position - playerHead.position;
         targetPos = CalcCirclePos(startLookAt, targetLookAt);
         GetComponent<RectTransform>().anchoredPosition = targetPos;
-        //if (targetVisible()) GetComponent<UICircle>().color = transparent;
-        //else GetComponent<UICircle>().color = standardCol;
+
+        float transparency = other.GetComponent<UILineRenderer>().color.a;
+        GetComponent<UICircle>().color = new Color(standardCol.r, standardCol.g, standardCol.b, transparency);
+        
+        /*if (rectInvisible())
+        {
+            GetComponent<UICircle>().color = moreTransparent;
+            moreTransparent.a -= transMod;
+        }
+        else
+        {
+            GetComponent<UICircle>().color = standardCol;
+            moreTransparent = standardCol;
+            moreTransparent.a -= transMod;
+        }*/
     }
 
 
@@ -55,8 +78,8 @@ public class CircleController : MonoBehaviour
 
         if (horRot >= 180) horRot = horRot - 360;
 
-        offsetX = (horRot / 180) * (Screen.width / 2);
-        offsetY = (vertRot / 90) * (Screen.height / 2);
+        offsetX = (horRot / 180) * (screenWidth / 2);
+        offsetY = (vertRot / 90) * (screenHeight / 2);
         
         //return new Vector2(center.x + offsetX, center.y + offsetY);
         return new Vector2(offsetX, offsetY);
@@ -64,14 +87,9 @@ public class CircleController : MonoBehaviour
         //return new Vector2(offsetX, offsetY);
     }
 
-    bool targetVisible()
+    bool rectInvisible()
     {
-        // todo within 60%
-        Vector2 otherPos = other.GetComponent<RectTransform>().anchoredPosition;
-        Vector2 thisPos = GetComponent<RectTransform>().anchoredPosition;
-        
-        bool b1 = thisPos.x >= otherPos.x && thisPos.y >= otherPos.y;
-        bool b2 = thisPos.x <= otherPos.x + rectW && thisPos.y <= otherPos.y + rectH;
-        return b1 && b2;
+        //return other.GetComponent<UILineRenderer>().color == moreTransparent;
+        return false;
     }
 }
