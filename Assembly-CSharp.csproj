@@ -87,6 +87,7 @@
     <Compile Include="Assets\Scripts\SphereController.cs" />
     <Compile Include="Assets\Scripts\TeleportRoomController.cs" />
     <Compile Include="Assets\Scripts\UiCamController.cs" />
+    <Compile Include="Assets\SoundController.cs" />
     <Compile Include="Assets\SteamAudio\AudioEngine.cs" />
     <Compile Include="Assets\SteamAudio\AudioEngineAmbisonicsSource.cs" />
     <Compile Include="Assets\SteamAudio\AudioEngineAmbisonicsSource_Unity.cs" />

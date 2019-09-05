@@ -2,293 +2,110 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b96d421-00f2-4a24-86c2-448ce474668b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/android.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/android/libaudioplugin_phonon.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/android/libaudioplugin_phonon.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/android/libphonon.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/android/libphonon.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle/Contents.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle/Contents/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle/Contents/Info.plist.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle/Contents/MacOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle/Contents/MacOS/audioplugin_phonon" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/audioplugin_phonon.bundle/Contents/MacOS/audioplugin_phonon.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle/Contents.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle/Contents/Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle/Contents/Info.plist.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle/Contents/MacOS.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle/Contents/MacOS/phonon_bundle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/phonon.bundle/Contents/MacOS/phonon_bundle.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/audioplugin_phonon.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/audioplugin_phonon.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/libaudioplugin_phonon.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/libaudioplugin_phonon.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/libphonon.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/libphonon.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/phonon.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86/phonon.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/audioplugin_phonon.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/audioplugin_phonon.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/libaudioplugin_phonon.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/libaudioplugin_phonon.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/libphonon.so" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/libphonon.so.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/phonon.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Plugins/x86_64/phonon.dll.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RandomPositionVR.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main Room.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Main Room.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Train Room.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/Train Room.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/newTrainRoom.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scenes/newTrainRoom.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngine.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngine.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineAmbisonicsSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineAmbisonicsSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineAmbisonicsSourceFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineAmbisonicsSourceFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineAmbisonicsSource_Unity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineAmbisonicsSource_Unity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineSourceFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineSourceFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineSource_Unity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineSource_Unity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineStateFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineStateFactory.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineState_Unity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/AudioEngineState_Unity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Baker.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Baker.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Common.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Common.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ComponentCache.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ComponentCache.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ComputeDevice.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ComputeDevice.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Core.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Core.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Core_Unity.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Core_Unity.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/Build.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/Build.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/MaterialValueDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/MaterialValueDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SimulationSettingsValueDrawer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SimulationSettingsValueDrawer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioAmbisonicsSourceInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioAmbisonicsSourceInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioBakedStaticListenerNodeInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioBakedStaticListenerNodeInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioCustomSettingsInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioCustomSettingsInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioDynamicObjectInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioDynamicObjectInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioGeometryInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioGeometryInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioListenerInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioListenerInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioManagerInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioManagerInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioMaterialInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioMaterialInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioMixerReturnGUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioMixerReturnGUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioProbeBoxInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioProbeBoxInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioReverbGUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioReverbGUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioSourceInspector.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioSourceInspector.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioWindow.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Editor/SteamAudioWindow.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Environment.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Environment.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/GameEngineState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/GameEngineState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ManagerData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ManagerData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/MaterialPreset.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/MaterialPreset.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/MaterialPresetList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/MaterialPresetList.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/MaterialValue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/MaterialValue.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ProbeManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/ProbeManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/RayTracer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/RayTracer.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Scene.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Scene.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SceneExporter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SceneExporter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SimulationSettingsPreset.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SimulationSettingsPreset.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SimulationSettingsPresetList.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SimulationSettingsPresetList.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SimulationSettingsValue.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SimulationSettingsValue.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioAmbisonicsSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioAmbisonicsSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioBakedStaticListenerNode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioBakedStaticListenerNode.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioCustomSettings.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioCustomSettings.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioCustomSpeakerLayout.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioCustomSpeakerLayout.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioDynamicObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioDynamicObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioGeometry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioGeometry.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioListener.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioListener.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioMaterial.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioMaterial.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioProbeBox.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioProbeBox.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioSource.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/SteamAudioSource.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Version.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/SteamAudio/Version.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BA2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BA2/riderModule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BA2/riderModule.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp-Editor.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/LineController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/LineController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/RandomPosition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/RandomPosition.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/Main Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/Main Room.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/Main Room.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scenes/Main Room.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/SampleScene.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/SampleScene.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/Train Room.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/Train Room.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/newTrainRoom.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scenes/newTrainRoom.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SearchObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SearchObjects.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SearchObjectsVR.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SearchObjectsVR.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shaders/UIShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/UIShader.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Main Room.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Main Room.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SonarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SonarController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/clean.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/clean.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/clean.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/clean.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/echo.flac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/echo.flac.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/echo.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/echo.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/note.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/note.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/search.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sound/search.wav.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ProjectSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Assembly-CSharp.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Actions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Actions.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Actions.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Actions.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Input_Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Input_Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Input_Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Input_Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Windows_EditorHelper.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Windows_EditorHelper.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Windows_EditorHelper.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/SteamVR_Windows_EditorHelper.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.KdTree.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.KdTree.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.KdTree.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.KdTree.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Poly2Tri.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Poly2Tri.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Poly2Tri.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Poly2Tri.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Settings.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Settings.Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Settings.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Settings.Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Stl.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Stl.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Stl.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.Stl.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProBuilder.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProGrids.Editor.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProGrids.Editor.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProGrids.Editor.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProGrids.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ScriptAssemblies/Unity.ProGrids.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/f5132f-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/f5132f-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/18/1847586c54c3f9140b2b303bd59a23fc" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/18/1847586c54c3f9140b2b303bd59a23fc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/1b/1b355da31ea043feba0c03e35dd4bc62" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1b/1b355da31ea043feba0c03e35dd4bc62" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/1b/1b9a044068dbe864ea41172aaa3db33d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/1b/1b9a044068dbe864ea41172aaa3db33d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/24/249ce16f7131865489bd77077ad50855" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/24/249ce16f7131865489bd77077ad50855" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/38/38c8faf1788024c02930a0c68a6e0edc" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/38/38c8faf1788024c02930a0c68a6e0edc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3a/3a84de5cd0624681b6b6dcd8921d912a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3b/3bb0254b9671413d9d08a855c5090237" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3b/3bb0254b9671413d9d08a855c5090237" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/3e/3e9a2175e0404f7ea30b2b694850bae0" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/3e/3e9a2175e0404f7ea30b2b694850bae0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/40/405b9b51bb344a128608d968297df79c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/40/405b9b51bb344a128608d968297df79c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/41/4113173d5e95493ab8765d7b08371de4" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/41/4113173d5e95493ab8765d7b08371de4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/46/46098a81a64a45c5b756320e10a22f13" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/46/46098a81a64a45c5b756320e10a22f13" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/4a/4a3ecb1425d14502837abea459cf2b70" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4a/4a3ecb1425d14502837abea459cf2b70" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4b3fa4bde7f1451a8218c03ee6a8ded8" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4b3fa4bde7f1451a8218c03ee6a8ded8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/4b/4ba2329b63d54f0187bcaa12486b1b0f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/52/52260b4799d22a041998a4dd247930ff" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/52/52260b4799d22a041998a4dd247930ff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/52/52260b4799d22a041998a4dd247930ff.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/52/52260b4799d22a041998a4dd247930ff.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/53/53ebcfaa2e1e4e2dbc85882cd5a73fa1" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/58/589cc22a50b6ff34fbd39d6266ae2574" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/58/589cc22a50b6ff34fbd39d6266ae2574" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/5e/5e2af7538cc66104188c317061e085f3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5e/5e2af7538cc66104188c317061e085f3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/5f/5f32cd94baa94578a686d4b9d6b660f7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/6a/6a10b2909283487f913b00d94cd3faf5" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6a/6a10b2909283487f913b00d94cd3faf5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/6e/6e2d432c5ea14e75aa3a79f90f704442" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6e/6e2d432c5ea14e75aa3a79f90f704442" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/6f/6fe576b47d8b47688ec5d02bccd15cf9" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/6f/6fe576b47d8b47688ec5d02bccd15cf9" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/76/7668179ede524d6396c8b7d84461ea29" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/76/7668179ede524d6396c8b7d84461ea29" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/80/80a3616ca19596e4da0f10f14d241e9f" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/84/844f815391db42d49455cbf1a7bfc434" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/84/844f815391db42d49455cbf1a7bfc434" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/87/870353891bb340e2b2a9c8707e7419ba" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/9b/9ba1dba0cfd62d14bbb885db808e5919" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9b/9ba1dba0cfd62d14bbb885db808e5919" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/b2/b2b693dffac3a4433b3114fea0b7fd4e" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b2/b2b693dffac3a4433b3114fea0b7fd4e" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/b5/b5da970776034f77a070d99423d68791" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b5/b5da970776034f77a070d99423d68791" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/b9/b95ab00277ee47c687d710a3bb623d0a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/b9/b95ab00277ee47c687d710a3bb623d0a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/c5/c5eefca04bfb7da43a547468570fcc29" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c5/c5eefca04bfb7da43a547468570fcc29" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/d2/d21eea4e3ec681243a562270cd3b5ddf" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d2/d21eea4e3ec681243a562270cd3b5ddf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/09/09882821b84890843aa1f6b3fc7d6989" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/09/09882821b84890843aa1f6b3fc7d6989.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/09/09882821b84890843aa1f6b3fc7d6989.resource" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c4ddc900c4fd264989e77b65d0e7838" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/2c/2c4ddc900c4fd264989e77b65d0e7838.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/39/3971c9b6f0dd1a94eb89820cd139fdb0" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/39/3971c9b6f0dd1a94eb89820cd139fdb0.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/39/3971c9b6f0dd1a94eb89820cd139fdb0.resource" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3f/3fbf26012af96ab43a2e05acfecee4f6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3f/3fbf26012af96ab43a2e05acfecee4f6.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/3f/3fbf26012af96ab43a2e05acfecee4f6.resource" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8f/8f07eba90ab0c034ba97382fd6c9c606" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/8f/8f07eba90ab0c034ba97382fd6c9c606.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb8c1232611f5594ca5fe08b5ede8b43" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb8c1232611f5594ca5fe08b5ede8b43.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/bb/bb8c1232611f5594ca5fe08b5ede8b43.resource" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/d2/d275433f462b49b43aec7e4d2fd5347d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d2/d275433f462b49b43aec7e4d2fd5347d" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/metadata/d2/d275433f462b49b43aec7e4d2fd5347d.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d2/d275433f462b49b43aec7e4d2fd5347d.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/d9/d91b494bf538fb74b8887c40ce977904" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/d9/d91b494bf538fb74b8887c40ce977904" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/dc/dc443db3e92b4983b9738c1131f555cb" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/dc/dc443db3e92b4983b9738c1131f555cb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/e1/e1007cd261c84053beb0c3537782908d" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e1/e1007cd261c84053beb0c3537782908d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/e4/e4f4cf1b9b434137a499903a7a1d651a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ea/ead147da21254ff9a0a936bdd75e1680" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/ed/ed7343f30e3843b3afda8f8b02669cea" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f5/f5f67c52d1564df4a8936ccd202a3bd8" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/f7/f70555f144d8491a825f0804e09c671c" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f7/f70555f144d8491a825f0804e09c671c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f6/f6ba316cf0b470547b6fb823e0bb64ff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f6/f6ba316cf0b470547b6fb823e0bb64ff.info" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/metadata/f6/f6d2175797d2f7d499de1229d6391418" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/f6/f6d2175797d2f7d499de1229d6391418" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SteamVR.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SteamVR.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SteamVR_Actions.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SteamVR_Actions.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SteamVR_Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SteamVR_Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SteamVR_Input_Editor.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SteamVR_Input_Editor.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SteamVR_Windows_EditorHelper.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SteamVR_Windows_EditorHelper.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/SteamVR.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/SteamVR.csprojAssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/SteamVR_Windows_EditorHelper.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/SteamVR_Windows_EditorHelper.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/SonarController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+              <folding>
+                <marker date="1567694140973" expanded="false" signature="6:78" ph="..." />
+                <marker date="1567694140973" expanded="true" signature="124:418" ph="{...}" />
+                <marker date="1567694140973" expanded="true" signature="250:416" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/SoundController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding>
+                <marker date="1567695295761" expanded="false" signature="6:78" ph="..." />
+                <marker date="1567695295761" expanded="true" signature="124:536" ph="{...}" />
+                <marker date="1567695295761" expanded="true" signature="131:534" ph="/* bool play = false; ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -323,40 +140,41 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuzzerController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/ParticlesAdditive.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Scripts/TeleportArea.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Boolean.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/OutlineShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SearchObjectsVR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Shaders/Highlight.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Shaders/HighlighGlobal.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CircleController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SearchObjects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Scripts/Teleport.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AttentionFunnelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Scripts/TeleportArea.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SphereController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Hand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bezier.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CurveTest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Pose.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Action_Boolean.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GuiController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LineController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TeleportRoomController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BezierCurve.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CurveController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/SoundController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RectController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/UIShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/RandomPositionVR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SonarController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Editor/BezierCurveInspector.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/ParticlesAdditive.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BuzzerController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/RippleShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/OutlineShader2.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/TeleportRoomController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/UIShader.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Interactable.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Scripts/Teleport.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RectController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CircleController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Shaders/Highlight.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/GuiController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Teleport/Shaders/HighlighGlobal.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomPosition.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/Input/SteamVR_Behaviour_Pose.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KeyboardInputController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/SteamVR/InteractionSystem/Core/Scripts/Hand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Editor/BezierCurveInspector.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SearchObjects.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CurveTest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/RandomPositionVR.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/InputController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/BezierCurve.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SphereController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SonarController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Bezier.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/AttentionFunnelController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SearchObjectsVR.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomPosition.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -401,7 +219,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/CanvasController.cs" />
         <option value="$PROJECT_DIR$/Assets/CustomRenderQueue.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/ParticlesAdditive.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/SonarController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/CircleController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LineController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SearchObjects.cs" />
@@ -409,6 +226,8 @@
         <option value="$PROJECT_DIR$/Assets/RandomPositionVR.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/UIShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SearchObjectsVR.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/SonarController.cs" />
+        <option value="$PROJECT_DIR$/Assets/SoundController.cs" />
       </list>
     </option>
   </component>
@@ -417,9 +236,21 @@
       <facet id="riderModule/invalid/Default Android Facet" />
     </ignored-facets>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1940" />
+    <option name="height" value="1180" />
+  </component>
   <component name="ProjectId" id="1QKWygMgQANNMfmo4cWexQsenze" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
@@ -449,14 +280,12 @@
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
     <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
       <option name="pid" />
-      <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
   </component>
@@ -481,6 +310,49 @@
     </task>
     <servers />
   </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Capture Tool" />
+      <window_info id="Captures" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Performance Profiler" />
+      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Unity" />
+      <window_info anchor="bottom" id="Unit Tests" />
+      <window_info anchor="bottom" id="Logcat" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="NuGet" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
+      <window_info anchor="right" id="Errors In Solution" />
+      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -491,14 +363,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
           </value>
         </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -510,5 +402,31 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/SonarController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+          <folding>
+            <marker date="1567694140973" expanded="false" signature="6:78" ph="..." />
+            <marker date="1567694140973" expanded="true" signature="124:418" ph="{...}" />
+            <marker date="1567694140973" expanded="true" signature="250:416" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/SoundController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <marker date="1567695295761" expanded="false" signature="6:78" ph="..." />
+            <marker date="1567695295761" expanded="true" signature="124:536" ph="{...}" />
+            <marker date="1567695295761" expanded="true" signature="131:534" ph="/* bool play = false; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

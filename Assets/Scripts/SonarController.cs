@@ -5,7 +5,7 @@ using UnityEngine;
 public class SonarController : MonoBehaviour
 {
     public Transform mainObject;
-    public Transform player;
+    public Transform player;    
 
     // Update is called once per frame
     void Update()
