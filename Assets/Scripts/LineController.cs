@@ -8,8 +8,8 @@ using UnityEngine.UI.Extensions;
 public class LineController : MonoBehaviour
 {
     public float screenOffset = 200;
-    public float visiblePerc = 0.8f;
-    public float transMod = .008f;
+    private float visiblePerc = 0.8f;
+    private float transMod = .008f;
     
     public Camera vrCamera;
     public Transform playerHead;

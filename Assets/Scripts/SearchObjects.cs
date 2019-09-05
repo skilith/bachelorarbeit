@@ -10,13 +10,15 @@ using Valve.VR.InteractionSystem;
 public class SearchObjects : MonoBehaviour
 {
     public List<Transform> transforms;
-    public GameObject visualization;
-       
+    public List<GameObject> visualizations;
+    public int visIndex = -1;   
+    
     public Text timesText;
     public Text instructionText;
     public Text countdownText;
     public Transform player;
 
+    private GameObject visualization;
     private MeshRenderer vizMeshRenderer;
 
     private List<GameObject> siblings;
@@ -34,7 +36,10 @@ public class SearchObjects : MonoBehaviour
     private float countdown = 3;
     private bool countdownComplete = false;
     private bool rectVis;
-    
+
+    private string uniFilePath = @"E:\BA_Protokolle\UserLog.txt";
+    private string homeFilePath = @"F:\BA_Protokolle\UserLog.txt";
+
     void OnMouseOver()
     {
         //Debug.Log("mouse over!");
@@ -114,9 +119,9 @@ public class SearchObjects : MonoBehaviour
                     copies[currentTransformIndex - 1].SetActive(false);
                 }
                 
+                timesText.text += (currentTransformIndex) + ". " + difference.ToString("0.00") + " Sekunden \n";
                 timesText.text += "Du hast insgesamt " + Sum(timeDifferences).ToString("0.0") + " Sekunden gebraucht. ";
-                // TODO
-                //writeToFile();
+                writeToFile();
                 visualization.SetActive(false);
                 gameObject.SetActive(false);
             }
@@ -145,11 +150,13 @@ public class SearchObjects : MonoBehaviour
                 timesText.text += (currentTransformIndex) + ". " + difference.ToString("0.00") + " Sekunden \n";
             }
         }
-        else Debug.Log("geh näher ran! Abstand: " + distance);
     }
 
     private void initVariables()
     {
+        if(visIndex == -1) visIndex = Mathf.RoundToInt(UnityEngine.Random.Range(0, 3));
+        visualization = visualizations[visIndex];
+        
         rectVis = visualization.name.Equals("RectVis");
         timesText.text = "";
         vizMeshRenderer = visualization.GetComponent<MeshRenderer>();
@@ -184,32 +191,22 @@ public class SearchObjects : MonoBehaviour
 
     void writeToFile()
     {
-        if (times.Count == transforms.Count)
+        string path = uniFilePath;
+        string dir = Path.GetDirectoryName(path);
+        string filename = Path.GetFileNameWithoutExtension(path);
+        string fileExt = Path.GetExtension(path);
+
+        path = Path.Combine(dir, filename + "_" + String.Format("{0}.jpg", DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")) + fileExt);
+
+        using (StreamWriter file = new StreamWriter(path))
         {
-            string path = @"C:\Users\Anita\Documents\BA_Prog_Logs\UserLog.txt";
-            string dir = Path.GetDirectoryName(path);
-            string filename = Path.GetFileNameWithoutExtension(path);
-            string fileExt = Path.GetExtension(path);
-
-            for (int i = 1;; i++)
+            for (int j = 0; j < transforms.Count; j++)
             {
-                if (File.Exists(path))
-                {
-                    path = Path.Combine(dir, filename + "_" + i + fileExt);
-
-                    using (StreamWriter file = new StreamWriter(path))
-                    {
-                        for (int j = 0; j < transforms.Count; j++)
-                        {
-                            file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j + 1);
-                            file.WriteLine(timeDifferences[j]);
-                        }
-
-                        // file.WriteLine("\n Gesamtzeit: {0}", timeDifferences.Sum());
-                        file.WriteLine("\n Gesamtzeit: {0}", Sum(timeDifferences));
-                    }
-                }
+                file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j + 1);
+                file.WriteLine(timeDifferences[j].ToString("0.00") + " Sekunden");
             }
+
+            file.WriteLine("\n Gesamtzeit: {0}", Sum(timeDifferences));
         }
     }
 

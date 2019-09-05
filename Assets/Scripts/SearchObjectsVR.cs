@@ -12,18 +12,20 @@ using Valve.VR.InteractionSystem;
 public class SearchObjectsVR : MonoBehaviour
 {
     public List<Transform> transforms;
+    public List<GameObject> visualizations;
+    public int visIndex = -1;
     
     public SteamVR_Action_Boolean triggerClick;
     public GameObject rightHand;
     // TODO
     public GameObject leftHand;
-
-    public GameObject visualization;
     
     public Text timesText;
     public Text instructionText;
     public Text countdownText;
 
+    private GameObject visualization;
+    
     private List<GameObject> siblings;
     private List<GameObject> copies;
     private int currentTransformIndex = 0;
@@ -45,6 +47,9 @@ public class SearchObjectsVR : MonoBehaviour
     private float countdown = 3;
     private bool countdownComplete = false;
     private bool rectVis;
+
+    private string uniFilePath = @"E:\BA_Protokolle\UserLog.txt";
+    private string homeFilePath = @"F:\BA_Protokolle\UserLog.txt";
 
     private void OnEnable()
     {
@@ -101,7 +106,7 @@ public class SearchObjectsVR : MonoBehaviour
             case SteamVR_Input_Sources.Any:
                 //float distance = Vector3.Distance(rightHand.transform.position, gameObject.GetComponent<BoxCollider>().center);
                 float distance = Vector3.Distance(rightHand.transform.position, gameObject.transform.position);
-                float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size) / 1.5f;
+                float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size) * 1.5f;
                 
                 if (distance <= minDistance)
                 {
@@ -125,10 +130,11 @@ public class SearchObjectsVR : MonoBehaviour
                             copies[currentTransformIndex - 1].SetActive(false);
                         }
                         
-                        timesText.text += "\n Du hast insgesamt " + Sum(timeDifferences).ToString("0.0") +
+                        timesText.text += (currentTransformIndex) + ". " + difference.ToString("0.00") + " Sekunden \n";
+                        timesText.text += "Du hast insgesamt " + Sum(timeDifferences).ToString("0.0") +
                                          " Sekunden gebraucht. ";
-                        // TODO
-                        //writeToFile();
+                        
+                        writeToFile();
                         visualization.SetActive(false);
                         gameObject.SetActive(false);
                     }
@@ -190,8 +196,11 @@ public class SearchObjectsVR : MonoBehaviour
 
     private void initVariables()
     {
+        bool withinRange = visIndex >= 0 && visIndex <= 3;
+        if(visIndex == -1 || !withinRange) visIndex = Mathf.RoundToInt(UnityEngine.Random.Range(0, 3));
+        visualization = visualizations[visIndex];
+
         rectVis = visualization.name.Equals("RectVis");
-        Debug.Log(rectVis);
         timesText.text = "";
         vizMeshRenderer = visualization.GetComponent<MeshRenderer>();
         //cubeMeshRenderer = gameObject.GetComponent<MeshRenderer>();
@@ -224,32 +233,22 @@ public class SearchObjectsVR : MonoBehaviour
 
     void writeToFile()
     {
-        if (times.Count == transforms.Count)
+        string path = uniFilePath;
+        string dir = Path.GetDirectoryName(path);
+        string filename = Path.GetFileNameWithoutExtension(path);
+        string fileExt = Path.GetExtension(path);
+
+        path = Path.Combine(dir, filename + "_" + String.Format("{0}.jpg", DateTime.Now.ToString("yyyy-MM-dd HH.mm.ss")) + fileExt);
+
+        using (StreamWriter file = new StreamWriter(path))
         {
-            string path = @"C:\Users\Anita\Documents\BA_Prog_Logs\UserLog.txt";
-            string dir = Path.GetDirectoryName(path);
-            string filename = Path.GetFileNameWithoutExtension(path);
-            string fileExt = Path.GetExtension(path);
-
-            for (int i = 1;; i++)
+            for (int j = 0; j < transforms.Count; j++)
             {
-                if (File.Exists(path))
-                {
-                    path = Path.Combine(dir, filename + "_" + i + fileExt);
-
-                    using (StreamWriter file = new StreamWriter(path))
-                    {
-                        for (int j = 0; j < transforms.Count; j++)
-                        {
-                            file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j + 1);
-                            file.WriteLine(timeDifferences[j]);
-                        }
-
-                        //file.WriteLine("\n Gesamtzeit: {0}", timeDifferences.Sum());
-                        file.WriteLine("\n Gesamtzeit: {0}", Sum(timeDifferences));
-                    }
-                }
+                file.WriteLine("\n Zeit zwischen {0} und {1}: \n", j, j + 1);
+                file.WriteLine(timeDifferences[j].ToString("0.00") + " Sekunden");
             }
+
+            file.WriteLine("\n Gesamtzeit: {0}", Sum(timeDifferences));
         }
     }
     

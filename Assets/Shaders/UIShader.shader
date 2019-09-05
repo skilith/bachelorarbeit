@@ -38,7 +38,7 @@ Shader "Custom/UIShader"
  
          Cull Off
          Lighting Off
-         ZWrite Off
+         //ZWrite Off
          ZTest Off
          Blend SrcAlpha OneMinusSrcAlpha
          ColorMask [_ColorMask]
