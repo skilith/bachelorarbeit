@@ -44,7 +44,7 @@ public class SearchObjectsVR : MonoBehaviour
     private DateTime timer;
     private double difference = 0;
 
-    private float countdown = 3;
+    private float countdown = 10;
     private bool countdownComplete = false;
     private bool rectVis;
 
@@ -69,7 +69,7 @@ public class SearchObjectsVR : MonoBehaviour
 
     void Countdown()
     {
-        instructionText.text = "Klicke auf die Würfel";
+        instructionText.text = "Suche die Gegenstände";
         countdownText.text = countdown.ToString("0");
         countdown -= Time.deltaTime;
         if (countdown < 0)
@@ -106,7 +106,7 @@ public class SearchObjectsVR : MonoBehaviour
             case SteamVR_Input_Sources.Any:
                 //float distance = Vector3.Distance(rightHand.transform.position, gameObject.GetComponent<BoxCollider>().center);
                 float distance = Vector3.Distance(rightHand.transform.position, gameObject.transform.position);
-                float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size) * 1.5f;
+                float minDistance = maxValue(gameObject.GetComponent<BoxCollider>().size) * 1.1f;
                 
                 if (distance <= minDistance)
                 {

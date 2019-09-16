@@ -12,15 +12,16 @@ public class RandomPosition : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            gameObject.transform.position = randomPosition();
+          Debug.Log("click");
+            gameObject.transform.localPosition = randomPosition();
         }
     }
     
     private Vector3 randomPosition()
     {
-        x = Random.Range(-4.7f, 3.92f);
-        y = Random.Range(0.33f, 1.7f);
-        z = Random.Range(-4.5f, 2.5f);
+        x = Random.Range(-5.5f, 3);
+        y = Random.Range(-1f, 0.8f);
+        z = Random.Range(-0.6f, -7.7f);
         return new Vector3(x, y, z);
     }
 }

@@ -7708,7 +7708,7 @@ MonoBehaviour:
   - {fileID: 1170789201}
   - {fileID: 1638747118}
   - {fileID: 1567541140}
-  visIndex: 3
+  visIndex: -1
   triggerClick:
     actionPath: /actions/default/in/GrabPinch
     needsReinit: 0
